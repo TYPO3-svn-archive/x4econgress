@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>Field descriptions</type>
+		<description>Description for metafeedit fields</description>
+	</meta>
+	<data type="array">
+		<languageKey index="de" type="array">
+			<label index="tx_x4econgress_congresses.name">Bitte schreiben Sie hier den vollständigen Titel
+			des Kurses im genauen Wortlaut. Bei einem modular aufgebauten Kurs oder einer Veranstaltungsreihe
+			den Gesamttitel.</label>
+			<label index="tx_x4econgress_congresses.description">Bei Einzelkursen oder einer Tagung geben
+			Sie hier bitte detaillierte Angaben zum Kursziel und zum Kursinhalt in Fliesstextform an.
+			Für in Module aufgeteilte Kurse genügt in der Regel eine allgemeine Beschreibung.</label>
+			<label index="tx_x4econgress_congresses.course_reg_deadline">Bitte geben Sie hier das
+			entsprechende Datum ein. Im Falle von Veranstaltungen, für die es keinen Anmeldeschluss gibt,
+			genügen ungefähre Angaben (z.B. Herbst 2005) oder Informationen wie "nach Absprache", etc.</label>
+			<label index="tx_x4econgress_congresses.payment_info">
+				<![CDATA[Beispiel: CHF 250 (inkl. Kursunterlagen)
+				<br />CHF 1200 für alle vier Module. Nicht eingeschlossen sind die Kosten für Unterkunft und Verpflegung.</b>
+				<br />CHF 400 für Einzelmodule. Ermässigung für Mitglieder des Fördervereins.]]>
+			</label>
+			<label index="tx_x4econgress_congresses.categories">Für die Zuordnung Ihrer Veranstaltung wählen Sie eine formale Kategorie (Certificate of Advanced Studies
+			oder Weiterbildungskurs) und eine (evtl. zwei) thematische Kategorie, in den Ihr Kurs am besten passt.</label>
+			<label index="tx_x4econgress_congresses.format">Ein spezielles Format können Sie hier vermerken, z.B. Vorlesungsreihe, Tagung, usw.</label>
+            <label index="tx_x4econgress_congresses.form">z.B. Vorlesung, Workshop, Unterricht in Kleingruppen, Laborkurs, Praxiskurs im Felde, Führung, etc.</label>
+            <label index="tx_x4econgress_congresses.clang">Unterrichtssprache, evtl. weitere Angaben zu vorausgesetzten Sprackenntnissen.</label>
+            <label index="tx_x4econgress_congresses.audience">Beschreiben Sie das Zielpublikum nach Interessenlagen, Berufsgruppen, etc. und forumlieren Sie hier
+			die Zulassungskriterien und Aufnahmebedingungen. Die allgemeinen Zulassungsbedingunen der universitären Weiterbildung werden auf den ersten
+			Seiten der Broschüre dargestellt.</label>
+            <label index="tx_x4econgress_congresses.teacher">Institution und Qualifikation der Dozierenden (z.B. Universität Basel, andere
+			Universitäten, Wirtschaft, usw.)</label>
+            <label index="tx_x4econgress_congresses.administration">Titel, Vorname, Name, Abteilung, Institution</label>
+            <label index="tx_x4econgress_congresses.contact">
+            	<![CDATA[Alle Angaben für die schriftliche und mündliche Kontaktaufnahme sowie die Kontaktaufnahme über Internet.
+			<br />Beispiel:<br/>Universität Basel<br/>Advanced Study Centre, Martina Kunz, Steinengraben 5, CH-4051 Basel<br />
+			Tel. +41 (0)61 267 30 08, Fax +41 (0)61 267 30 09<br />info@uniweiterbildung.ch, www.uniweiterbildung.ch]]>
+			</label>
+            <label index="tx_x4econgress_congresses.schedule">
+            	<![CDATA[Nennen Sie Beginn und Ende des Kurses sowie Angaben zu den Zeiten während des Kurses.
+			<br />Beispiel:<br />28. Juni / 4. Juli / 10. Juli 2007, jeweils von 10.30 bis 16 Uhr<br />
+			7./11. Mai 2007, jeweils 9 bis 17.30 Uhr<br />12. Juni bis 10. Juli 2007, jeweils 16.30 bis 19.30 Uhr<br />
+			23 October to 3 November 2007, Monday to Friday 8.45 to 12.00 and 14.00 to 17.00]]>
+			</label>
+            <label index="tx_x4econgress_congresses.location">
+            	<![CDATA[Beispiel:<br />Universität Basel, Kollegienhaus, Hörsaal 102, Petersplatz 1, Basel]]>
+			</label>
+            <label index="tx_x4econgress_congresses.host">Geben Sie hier bitte die Organisationseinheit an.</label>
+            <label index="tx_x4econgress_congresses.website">
+            	<![CDATA[Hier können Sie zum Internetauftritt der Veranstaltung verweisen.<br />
+			Beispiel: www.uniweiterbildung.ch]]>
+			</label>
+			<label index="tx_x4econgress_congresses.diverse">Hier können Sie eventuelle weitere Informationen zum Kurs oder allenfalls auch zu Ihrer 
+			Erfassung anbringen.</label>
+			<label index="tx_x4econgress_congresses.files">Falls Sie Dokumente zur Verfügung (pdf-Studienführer, Fotos, etc.) stellen möchten,
+			können Sie diese hier hochladen.</label>
+			<label index="tx_x4econgress_congresses.notification_email">Geben Sie die E-Mail-Adresse an welche die Anmelde-Registrierungen erhält.</label>
+		</languageKey>
+	</data>
+</T3locallang>

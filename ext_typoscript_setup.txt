@@ -1,0 +1,89 @@
+plugin.tx_x4econgress_pi1 {
+   detailView {
+       templateFile = typo3conf/ext/x4econgress/templates/detail.html
+   }
+   listView {
+		template = typo3conf/ext/x4econgress/templates/list.html
+	
+		results_at_a_time = 999
+		maxPages = 7
+		showResultCount = 1
+		showPBrowserText = 0
+		dontLinkActivePage = 1
+		tableParams = cellpadding="2" align="center"
+
+		showFirstLast = 1
+		pagefloat = center
+		showRange = 1
+		disabledLinkWrap = <span style="color:#bbb;">|</span>
+		inactiveLinkWrap = |
+		activeLinkWrap = <strong>|</strong>
+		LinksWrap =|
+		showResultsWrap = |<br />
+		showResultsNumbersWrap = |
+		browseBoxWrap =
+		browseLinksWrap = |
+		showFirstLast = 1
+		pagefloat = center
+		showRange = 1
+		showFirstLast = 1
+	}
+	
+	profileView{
+		template = typo3conf/ext/x4econgress/templates/profile.html
+		#show fields of participants_table for audience (defaults to congress_id)
+		showAudienceFields = 
+		#show fields of participants_table for speaker (defaults to congress_id)
+		showSpeakerFields = 
+		#add Javascript for PaymentInfos
+		additionalJS = 
+	}
+	
+	field_orderList = name, date_from
+	
+	registration{
+		# use ReCaptcha in the registration form
+		useReCaptcha = 0
+		# create FE-User upon registration
+		createFeUser = 0
+		# SysFolder for created FE-Users
+		feUserPid < plugin.tx_x4econgress_pi1.pidList
+	}
+	
+	# separate Template for User E-Mail upon registration
+	userRegMailTemplate = 
+	# force Registration Mail if notification email field is empty (for user mail)
+	forceRegistrationMail = 0
+	
+	#paypal log
+	ppIpnLogFile = fileadmin/{$token}/paypal.txt
+	#paypal custom vars
+	storeCustomPPVars = payed,veggie,evening
+}
+
+# Configuration for xml-output
+[globalVar = TSFE:id = {$plugin.tx_x4econgress_pi1.xmlPageUid}]
+	config >
+	config{
+		index_enable = 0
+		index_externals = 0
+		spamProtectEmailAddresses = 0
+		disableAllHeaderCode = 1
+		additionalHeaders = Content-Type: text/xml; charset=utf-8 | Content-disposition: attachment; filename=kongressexport.xml
+		no_cache = 1
+		xhtml_cleaning = 0
+	}
+	page >
+	page = PAGE
+	page.10 < plugin.tx_x4econgress_pi1
+	page.10 {
+		modeSelection = listOfDetail
+		listView {
+			template = fileadmin/{$token}/templates/ext/congress_listDetail.html
+			detailLinkFields >
+		}
+		noWrapInBaseClass = 1
+		stripTagContent = 1
+		addtionalWhereCondition = publish=1
+	}
+[global]

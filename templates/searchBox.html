@@ -1,0 +1,35 @@
+<!-- ###searchBox### begin -->
+<form action="###formAction###" method="post">
+	
+	<script type="text/javascript">
+		/*<[CDATA[*/
+		var fromDate	= new DatePicker({
+		relative	: 'x4econgress_fromdate',
+		language	: '###pickerLang###'
+		});
+		
+		var toDate	= new DatePicker({
+		relative	: 'x4econgress_todate',
+		language	: '###pickerLang###'
+		});
+		
+		/*]]>*/
+	</script>
+	
+	<div id="congress_search">
+		<input type="hidden" name="no_cache" value="1" />
+		
+		<label for="x4econgress_fromdate">###fromdate###</label><br />
+		<input id="x4econgress_fromdate" type="text" name="tx_x4econgress_pi1[fromdate]" /><br />
+		
+		<label for="x4econgress_fromdate">###todate###</label><br />
+		<input id="x4econgress_fromdate" type="text" name="tx_x4econgress_pi1[todate]" /><br />
+		
+		<label for="x4econgress_sword">###keyword###</label><br />
+		<input id="x4econgress_sword" type="text" name="tx_x4econgress_pi1[sword]" /><br /><br />
+		
+		<input type="submit" value="###submit###" />
+	</div>
+</form>
+
+<!-- ###searchBox### end -->

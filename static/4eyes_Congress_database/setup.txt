@@ -1,0 +1,100 @@
+plugin.tx_x4econgress_pi1 {
+	pidList = {$plugin.tx_x4econgress_pi1.pidList}
+	categoryPidList = {$plugin.tx_x4econgress_pi1.pidList}
+	detailView.template = typo3conf/ext/x4econgress/templates/detail.html
+	registration.template = typo3conf/ext/x4econgress/templates/registration.html
+	speakerRegistration.template = typo3conf/ext/x4econgress/templates/speaker_registration.html
+	completeSpeakerRegistration.template = typo3conf/ext/x4econgress/templates/complete_speaker_registration.html
+	registration_email.template = typo3conf/ext/x4econgress/templates/registration_email.html
+	payment.template = typo3conf/ext/x4econgress/templates/payment.html
+	listView{
+		template = typo3conf/ext/x4econgress/templates/list.html
+		categoryViewTemplate = typo3conf/ext/x4econgress/templates/listByCategory.html
+		hierarchyTemplateFile = typo3conf/ext/x4econgress/templates/hierarchy.html
+		detailLinkFields = name
+		
+		dispParentFields = name,
+	
+		results_at_a_time = 999
+		maxPages = 7
+		
+		dontLinkActivePage = 1
+		tableParams = cellpadding="2" align="center"
+	
+		pagefloat = center
+		
+		disabledLinkWrap = <span style="color:#bbb;">|</span>
+		inactiveLinkWrap = |
+		activeLinkWrap = <strong>|</strong>
+		LinksWrap =|
+		
+		browseBoxWrap =
+		browseLinksWrap = |
+
+		showFirstLast = 0
+		showPBrowserText = 0
+		showRange = 1
+		showResultCount = 1
+		showResultsNumbersWrap = |
+		showResultsWrap = |<br />
+	}
+	searchView{
+		template = typo3conf/ext/x4econgress/templates/searchBox.html
+	}
+	
+	searchFieldList = name,description,payment_info,speaker_info,registration_deadline,notification_email,format,form,clang,audience,teacher,administration,contact,schedule,location,host,website,intranet
+	
+	mmRelatedConfig{
+		tx_x4econgress_categories{
+			field_orderList = title
+			orderByList = title
+		}
+		tx_x4epersdb_person{
+			field_orderList = lastname,firstname,office_phone,email
+			orderByList = lastname
+			pidList = {$persDB.pidList}
+		}
+	}
+	
+	persDB.detailPageUid = {$persDB.detailPageUid}
+	
+	categoryMenu{
+		template = typo3conf/ext/x4econgress/templates/catMenu.html
+	}
+	
+	field_orderList = name, date_from
+	orderByList = date_from, name
+	datetimeFormat = {$datetime_strftime}
+	dateFormat = {$date_strftime}
+	
+	orderByList = name
+	
+	skipHtmlEntitiesFields = all
+	
+	#strip HTML-tags from content retrieved with getFieldContent()
+	stripTagContent = 0
+	
+	paperList{
+		# if set to 1 shows registration links in listView
+		showRegLinkInListView = 0
+		
+		filelink < plugin.tx_x4econgress_pi1.filelink
+		
+		field_orderList = firstname, name, uploads
+		orderByList = name
+		pidList < plugin.tx_x4econgress_pi1.pidList
+		
+		#default Parameters like listView of pi1-plugin
+		listView < plugin.tx_x4econgress_pi1.listView
+		listView{
+			detailLinkFields >
+		}
+	}
+}
+
+plugin.tx_x4econgress_pi2{
+	extTreeScript = typo3conf/ext/x4econgress/pi2/twotrees.js
+	detailView.template = typo3conf/ext/x4econgress/pi2/templates/sortTrees.html
+	useAlternExtJSPath >
+	orderByList < plugin.tx_x4econgress_pi1.orderByList
+}

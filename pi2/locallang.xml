@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for plugin &quot;tx_x4econgress_pi2&quot;</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="pi2_title">4Eyes Congress Database - Recordsorting</label>
+			<label index="pi2_plus_wiz_description">ExtJS-based Sorting of records.</label>
+			<label index="pidList">Record Storage Folder</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="pi2_title">4Eyes Kongress Datenbank - Record-Sortierung</label>
+			<label index="pi2_plus_wiz_description">ExtJS-basierte Sortierung von Records</label>
+			<label index="pidList">SysFolder der Records</label>
+		</languageKey>
+	</data>
+</T3locallang>

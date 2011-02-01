@@ -1,0 +1,28 @@
+<!-- ###singleView### begin-->
+	<h2>
+	<!-- ###nameBox### begin -->
+		###name###
+	<!-- ###nameBox### end -->
+		- ###speakerRegistration###
+	</h2>
+	<form action="###formAction###" method="post" enctype="multipart/form-data">
+		<p>
+			<label for="x4econgress_poster_title">###posterTitle###</label>
+			<input type="text" name="###prefixId###[poster_title]" id="x4econgress_poster_title"  style="width: 400px" />
+		</p>
+		<p>
+			<label for="x4econgress_poster_abstract">###posterAbstract###</label>
+			<textarea name="###prefixId###[poster_abstract]" id="x4econgress_poster_abstract" cols="80" rows="20" style="width: 400px"></textarea>
+		</p>
+		<p id="uploads" class="display: none">
+			<label id="imageLabel">###uploads###</label>
+			<input type="file" name="###prefixId###[uploads][]" />
+		</p>
+		<p>
+			<label>&nbsp;</label>
+			<input type="submit" name="###prefixId###[submit]" value="###form_submit###" />
+			<input type="hidden" name="###prefixId###[uid]" value="###uid###" />
+			<input type="hidden" name="###prefixId###[rand]" value="###rand###" />
+		</p>
+	</form>
+<!-- ###singleView### end-->

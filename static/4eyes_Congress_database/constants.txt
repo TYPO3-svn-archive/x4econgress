@@ -1,0 +1,2 @@
+plugin.tx_x4econgress_pi1 {
+}

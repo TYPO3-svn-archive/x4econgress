@@ -1,0 +1,27 @@
+(add new changes on top of this file)
+
+2010-12-01 Manuel Kammermann <manuel-at-4eyes.ch>
+	* pi1->pi_list_row(): checked for empty string before performing in_array()
+
+2010-11-15 Manuel Kammermann <manuel-at-4eyes.ch>
+	* added Marker 'updated' for date of tstamp formatted with TS setup 'dateFormat'
+
+2010-07-13 Manuel Kammermann <manuel-at-4eyes.ch>
+	* new Function renderPapers which shows listView of Participants in hierarchyView
+	* added field 'uploads' to handle pdf-files for paper uploads
+	* new TS-Part paperList to configure renderPapers differently from normal listView
+	* added 0-value for radiobuttons of course-/lectureformat-choice
+
+2010-07-13 Markus Stauffiger <markus-at-4eyes.ch>
+	* modified getFieldContent for xml-output
+	* new field publish to filter publications for xml-export
+	* new ts-constant xmlPageUid (see ext_typoscript_constants.txt)
+	* new ts-code for the xml-output (see ext_typoscript_setup.txt)
+
+10-07-08 Manuel Kammermann <manuel-at-4eyes.ch>
+	* new TS variable: plugin.tx_4econgress_pi1.stripTagContent
+	* if set to 1 html tags are stripped from content fetched with getFieldContent
+
+08-06-18 Markus Stauffiger (4eyes GmbH)  <markus-at-4eyes.ch>
+
+	* Initial release

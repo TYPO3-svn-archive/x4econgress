@@ -1,0 +1,79 @@
+.tx-x4econgress-pi1 .tablelist tbody tr td, .tx-x4ejobs-pi1 .tablelist tbody tr td{
+	height: 20px;
+	padding: 0 5px;
+}
+
+.tx-x4econgress-pi1 .tablelist tbody tr td a{
+	width: 380px;
+	display: block;
+}
+
+.tx-x4econgress-pi1 .tablelist thead th{
+	text-align:left;
+	padding: 0 0 8px 5px;
+}
+
+.tx-x4econgress-pi1 form{
+	margin-top: 30px;
+}
+
+#tx_x4econgress_form p label, .tx-x4econgress-pi1 form p label{
+	text-align: left!important;
+	float: left;
+	width: 100px;
+	padding-right:10px;
+	text-align: left;
+}
+
+#tx_x4econgress_form .radio_button_type{
+	float: left;
+	margin-left: 0;
+	width: auto;
+}
+
+#tx_x4econgress_form input, #tx_x4econgress_form textarea{
+	padding: 0 3px;
+	width:194px;
+	float: left;
+	
+}
+
+#tx_x4econgress_form .submit_button{
+	width: 100px;
+}
+
+.tx-x4econgress-pi1 form textarea, .tx-x4econgress-pi1 form input{
+	padding: 0 3px;
+}
+
+.validation-advice{
+	float: right;
+	color: #A60000;
+	display: none;
+}
+
+tx_x4econgress_form p{
+	clear:both;
+}
+
+.reg_type_label{
+	width:auto!important;
+}
+
+.validation-failed{
+	border: 1px solid #999999!important;
+	background-color: #FFD6CC!important;
+}
+
+#posterImages {
+	margin-left:110px !important;
+}
+
+#posterImages input {
+	margin-top:8px;
+}
+
+#imageLabel {
+	float:none;
+	display: block;
+}

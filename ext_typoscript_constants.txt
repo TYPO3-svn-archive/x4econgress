@@ -1,0 +1,4 @@
+plugin.tx_x4econgress_pi1 {
+	# pageUid on which to display the xml-output
+	xmlPageUid =
+}

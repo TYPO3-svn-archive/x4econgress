@@ -1,0 +1,160 @@
+<!-- ###profile### -->
+	<div class="profileView">
+		<div class="registrations">
+			<h2>Sie haben sich als Hörer angemeldet für / You are signed up as audience for:</h2>
+			###audience###
+			<h2>Für folgende Veranstaltungen sind sie als Sprecher eingetragen / You are signed up as a speaker for:</h2>
+			###speaker###
+		</div>
+		###upload###
+		<div class="payment">
+			<div>
+				###feUser###
+			</div>
+			<div>
+				###payment###
+			</div>
+		</div>
+	</div>
+<!-- ###profile### -->
+
+<!-- ###audienceList### begin -->
+		 <ul class="audience">
+			<!-- ###rows### begin -->
+				<!-- ###row0### begin -->
+				<li class="odd">
+					<!-- ###cell### -->
+						###content###
+					<!-- ###cell### -->
+				</li>
+				<!-- ###row0### end -->
+
+				<!-- ###row1### begin -->
+				<li>
+					<!-- ###cell### -->
+						###content###
+					<!-- ###cell### -->
+				</li>
+				<!-- ###row1### end -->
+			<!-- ###rows### end -->
+		</ul>
+<!-- ###audienceList### end -->
+
+<!-- ###speakerList### begin -->
+		 <ul class="speaker">
+			<!-- ###rows### begin -->
+				<!-- ###row0### begin -->
+				<li class="odd">
+					<!-- ###cell### -->
+						###content###
+					<!-- ###cell### -->
+				</li>
+				<!-- ###row0### end -->
+
+				<!-- ###row1### begin -->
+				<li>
+					<!-- ###cell### -->
+						###content###
+					<!-- ###cell### -->
+				</li>
+				<!-- ###row1### end -->
+			<!-- ###rows### end -->
+		</ul>
+<!-- ###speakerList### end -->
+
+<!-- ###feUserInfo### -->
+	<div class="feUserInfo">
+		<p class="feUser_name"><span>Name:</span>###title### ###first_name### ###last_name###</p>
+		<p class="feUser_address"><span>Adresse:</span>###address###</p>
+		<p class="feUser_zip"><span>Ort:</span>###zip### ###city###</p>
+		<p class="feUser_country"><span>Land:</span>###country###</p>
+		<p class="feUser_email"><span>E-Mail:</span>###email###</p>
+		<p class="feUser_work"><span>Institut:</span>###company###</p>
+		<p class="feUser_phone"><span>Telefon:</span>###telephone###</p>
+	</div>
+<!-- ###feUserInfo### -->
+
+<!-- ###paymentInfo### -->
+<h1>Ticket bezahlen (PayPal)</h1>
+<form id="paypalOptions" name"paypalOptions">
+
+<div class="formRow">
+	<label>Veranstaltung / Congress:</label>
+	<select id="pp_opt_days">
+		<option value="0">Zwei Tage / Two Days</option>
+		<option value="1">nur Donnerstag / Thursday only</option>
+		<option value="2">nur Freitag / Friday only</option>
+	</select>
+</div>
+
+<div class="formRow">
+	<label>Mitglied / Member:</label>
+	<input type="checkbox" id="pp_opt_member" />
+</div>
+
+<div class="formRow">
+	<label>Student*:</label>
+	<input type="checkbox" id="pp_opt_student" />
+</div>
+
+<div class="formRow">
+	<label>Abendveranstaltung Do/ Evening program Thu:</label>
+	<input type="checkbox" id="pp_opt_evening" />
+</div>
+
+<div class="formRow">
+	<label>Vegetarisches Menü / Vegetarian meal:</label>
+	<input type="checkbox" id="pp_opt_vegetarian" />
+</div>
+
+<input id="createPayPal" type="button" value="Preis aktualisieren!" />
+
+###additionalJS###
+
+</form>
+
+<div id="priceOverview" style="visibility: hidden; margin-top: 10px;"></div>
+<div style="width: 310px; ">*Die Anmeldung als Student bedingt eine vorhandene Immatrikulationsbestätigung.</div>
+
+<form id="payPalButton" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_xclick">
+<input type="hidden" name="business" value="M6ZXEMUP4LADN">
+<input type="hidden" name="lc" value="DE">
+<input type="hidden" name="item_name" value="Ticket fuer die 3-Laender-Tagung">
+<input type="hidden" name="item_number" value="congressticket">
+<input type="hidden" name="no_note" value="0">
+<input type="hidden" name="cn" value="Add special instructions to the seller">
+<input type="hidden" name="no_shipping" value="2">
+<input type="hidden" name="rm" value="1">
+<input type="hidden" name="return" value="http://dreilaendertagung.unibas.ch/3-laender-tagung/workshops/">
+<input type="hidden" name="cancel_return" value="http://dreilaendertagung.unibas.ch/3-laender-tagung/">
+<input type="hidden" name="notify_url" value="http://dreilaendertagung.unibas.ch/3-laender-tagung/workshops/profilseite"
+<input type="hidden" name="currency_code" value="CHF">
+<input type="hidden" name="bn" value="PP-BuyNowBF:btn_paynow_SM.gif:NonHosted">
+<input type="hidden" name="amount" value="450">
+<input type="hidden" name="user_id" value="###feUserId###">
+<input type="hidden" name="custom" value="">
+
+<input class="paypal-button" style="visibility: hidden;" type="image" src="https://www.paypal.com/de_DE/CH/i/btn/btn_paynow_SM.gif" border="0" name="submit" alt="Jetzt einfach, schnell und sicher online bezahlen – mit PayPal.">
+<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+<!-- ###paymentInfo### -->
+
+<!-- ###fileUpload### -->
+
+<div class="fUploadItem">
+<form action="###formAction###" method="post" enctype="multipart/form-data">
+	<label>###congressName###</label>
+	<input type="file" name="upload_###regUid###" />
+	<input type="submit">
+</form>
+</div>
+
+<!-- ###fileUpload### -->
+
+<!-- ###finishFileUpload### -->
+###SUCCESS###
+###FAILURE###
+<p><a href="###BackLink###" target="_self">###BackLinkLabel###</a></p>
+<!-- ###finishFileUpload### -->
