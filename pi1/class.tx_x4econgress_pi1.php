@@ -80,12 +80,19 @@ class tx_x4econgress_pi1 extends x4epibase {
 		if (strpos($t['eval'],'datetime')!== false) {
 			if ($this->internal['currentRow'][$fN] != 0) {
 				$out = strftime($this->conf['datetimeFormat'],$this->internal['currentRow'][$fN]);
+				if($this->charset == 'utf-8'){
+					$out = utf8_encode($out);
+				}
 			} else {
 				return '';
 			}
 		} elseif(strpos($t['eval'],'date')!== false) {
 			if ($this->internal['currentRow'][$fN] != 0) {
 				$out = strftime($this->conf['dateFormat'],$this->internal['currentRow'][$fN]);
+				if($this->charset == 'utf-8'){
+					$out = utf8_encode($out);
+				}
+
 			} else {
 				return '';
 			}
