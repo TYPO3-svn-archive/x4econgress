@@ -594,7 +594,7 @@ $TCA["tx_x4econgress_congresses"] = array (
 $TCA["tx_x4econgress_participants"] = array (
 	"ctrl" => $TCA["tx_x4econgress_participants"]["ctrl"],
 	"interface" => array (
-		"showRecordFieldList" => "hidden,type,feuser_id,congress_id,name,firstname,address,zip,city,country,poster_title,poster_abstract,poster_detail,poster_images"
+		"showRecordFieldList" => "hidden,type,feuser_id,congress_id,name,firstname,address,zip,city,country,poster_title,poster_abstract,poster_detail,poster_images,gender,birthyear"
 	),
 	"feInterface" => $TCA["tx_x4econgress_participants"]["feInterface"],
 	"columns" => array (
@@ -615,6 +615,26 @@ $TCA["tx_x4econgress_participants"] = array (
 					Array("LLL:EXT:x4econgress/locallang_db.xml:tx_x4econgress_participants.type.I.0", "0"),
 					Array("LLL:EXT:x4econgress/locallang_db.xml:tx_x4econgress_participants.type.I.1", "1"),
 				),
+			)
+		),
+		"gender" => Array (
+			"exclude" => 0,
+			"label" => "LLL:EXT:x4econgress/locallang_db.xml:tx_x4econgress_participants.gender",
+			"config" => Array (
+				"type" => "radio",
+				"items" => Array (
+					Array("LLL:EXT:x4econgress/locallang_db.xml:tx_x4econgress_participants.gender.male", "m"),
+					Array("LLL:EXT:x4econgress/locallang_db.xml:tx_x4econgress_participants.gender.female", "f"),
+				),
+			)
+		),
+		"birthyear" => Array (
+			"exclude" => 0,
+			"label" => "LLL:EXT:x4econgress/locallang_db.xml:tx_x4econgress_participants.birthyear",
+			"config" => Array (
+				"type" => "input",
+				"size" => "30",
+				"eval" => "required"
 			)
 		),
 		"congress_id" => Array (		
@@ -840,11 +860,11 @@ $TCA["tx_x4econgress_participants"] = array (
 		)
 	),
 	"types" => array (
-		"0" => array("showitem" => "hidden;;1;;1-1-1, type, congress_id, feuser_id, name, firstname, address, zip, city, country, email, phone, worklocation, remarks,
+		"0" => array("showitem" => "hidden;;1;;1-1-1, type, congress_id, feuser_id, gender, name, firstname, birthyear, address, zip, city, country, email, phone, worklocation, remarks,
 						--div--;Payment,payed,veggie,evening,custom"),
-		"1" => array("showitem" => "hidden;;1;;1-1-1, type, congress_id, feuser_id, name, firstname, address, zip, city, country, email, phone, worklocation, remarks, 
+		"1" => array("showitem" => "hidden;;1;;1-1-1, type, congress_id, feuser_id, gender, name, firstname, birthyear, address, zip, city, country, email, phone, worklocation, remarks,
 						--div--;Poster,poster_title, poster_abstract, poster_detail, poster_images, uploads, dl_files,discussant,
-						--div--;Payment,payed,veggie,evening,custom")
+						--div--;Payment,payed,veggie,evening,custom,gender")
 	),
 	"palettes" => array (
 		"1" => array("showitem" => "")

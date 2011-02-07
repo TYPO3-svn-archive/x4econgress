@@ -72,6 +72,10 @@
 			<label index="tx_x4econgress_participants.veggie">Vegetarian Menu</label>
 			<label index="tx_x4econgress_participants.evening">Evening program</label>
 			<label index="tx_x4econgress_participants.discussant">Discussant</label>
+			<label index="tx_x4econgress_participants.gender">Gender</label>
+			<label index="tx_x4econgress_participants.gender.male">Mann</label>
+			<label index="tx_x4econgress_participants.gender.female">Frau</label>
+			<label index="tx_x4econgress_participants.birthyear">Birthyear</label>
 			<label index="tx_x4econgress_categories">Categories</label>
             <label index="tx_x4econgress_categories.title">Title</label>
 			<label index="tt_content.list_type_pi1">Congress database</label>
@@ -145,6 +149,10 @@
 			<label index="tx_x4econgress_participants.veggie">Vegetarisches Menü</label>
 			<label index="tx_x4econgress_participants.evening">Abendprogramm</label>
 			<label index="tx_x4econgress_participants.discussant">Discussant</label>
+			<label index="tx_x4econgress_participants.gender">Geschlecht</label>
+			<label index="tx_x4econgress_participants.gender.male">Mann</label>
+			<label index="tx_x4econgress_participants.gender.female">Frau</label>
+			<label index="tx_x4econgress_participants.birthyear">Jahrgang</label>
 			<label index="tx_x4econgress_categories">Kategorien</label>
             <label index="tx_x4econgress_categories.title">Titel</label>
 			<label index="tt_content.list_type_pi1">Kongressdatenbank</label>

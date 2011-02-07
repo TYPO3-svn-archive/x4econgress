@@ -1,0 +1,7 @@
+x4econgress {
+	# uid of sysfolder containing the participants (registration) records
+	pidList =
+
+	#fields to export
+	showFields = name,firstname,type,address,zip,city,country,email,remarks
+}

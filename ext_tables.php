@@ -43,7 +43,7 @@ $TCA["tx_x4econgress_participants"] = array (
 		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_x4econgress_participants.gif',
 	),
 	"feInterface" => array (
-		"fe_admin_fieldList" => "type, feuser_id, congress_id, name, firstname, address, zip, city, country, poster_title, poster_abstract, poster_detail, poster_images, email, phone, worklocation, phone, worklocation, remarks, uploads",
+		"fe_admin_fieldList" => "type, feuser_id, congress_id, name, firstname, address, zip, city, country, poster_title, poster_abstract, poster_detail, poster_images, email, phone, worklocation, phone, worklocation, remarks, uploads, gender, birthyear",
 	)
 );
 

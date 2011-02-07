@@ -42,14 +42,39 @@ plugin.tx_x4econgress_pi1 {
 	field_orderList = name, date_from
 	
 	registration{
+		# registration type
+		# standard: Every events has its own registration
+		# single: One registration for all event records, dummy congress needs to be set as well
+		type = standard
+
 		# use ReCaptcha in the registration form
 		useReCaptcha = 0
+
 		# create FE-User upon registration
 		createFeUser = 0
+
 		# SysFolder for created FE-Users
 		feUserPid < plugin.tx_x4econgress_pi1.pidList
+
+		template = EXT:x4econgress/templates/registration.html
+	}
+
+	registrationLink {
+		template = EXT:x4econgress/templates/registrationLink.html
+	}
+
+	registration_email {
+		template = EXT:x4econgress/templates/registration_email.html
+	}
+
+	payment {
+		template = EXT:x4econgress/templates/payment.html
 	}
 	
+	# if registration type is single, use this (hidden) record to asign the
+	# registrations
+	dummyCongressUid =
+
 	# separate Template for User E-Mail upon registration
 	userRegMailTemplate = 
 	# force Registration Mail if notification email field is empty (for user mail)

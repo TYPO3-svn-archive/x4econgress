@@ -130,6 +130,8 @@ CREATE TABLE tx_x4econgress_participants (
 	payed tinyint DEFAULT '0' NOT NULL,
 	evening tinyint DEFAULT '0' NOT NULL,
 	custom text NOT NULL,
+	gender varchar(1) DEFAULT '' NOT NULL,
+	birthyear int(11) DEFAULT '0' NOT NULL,
 	
 	PRIMARY KEY (uid),
 	KEY parent (pid)

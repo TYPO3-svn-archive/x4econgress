@@ -45,6 +45,13 @@ class tx_x4econgress_pi1 extends x4epibase {
 	var $registrationUid; // uid of the registration, used for the speaker's poster-infos
 	var $uploaddir = 'uploads/tx_x4econgress/';
 	var $personDetailPlugin = 'tx_x4epersdb_pi7';
+	
+	/**
+	 * Uid to use, if there is no actual record to use
+	 * 
+	 * @var integer
+	 */
+	var $dummyCongressUid = 0;
 
 	function main($content,$conf) {
 		$GLOBALS['TSFE']->additionalHeaderData[$this->extKey].='
@@ -56,6 +63,7 @@ class tx_x4econgress_pi1 extends x4epibase {
 	function init($content, $conf){
 		parent::init($content, $conf);
 
+		$this->dummyCongressUid = intval($this->conf['dummyCongressUid']);
 		// manage common Categories for View ListByCategory
 
 		if($this->getTSFFvar('categoryField')){
@@ -68,6 +76,7 @@ class tx_x4econgress_pi1 extends x4epibase {
 			}
 		}
 	}
+
 
 	/**
 	 * Get the content of a field with type "input"
@@ -150,8 +159,35 @@ class tx_x4econgress_pi1 extends x4epibase {
 		}
 	}
 
+	/**
+	 * Sets the showUid to the dummy uid, if registration is set to single and
+	 * no other congress is selected
+	 *
+	 * @return void
+	 */
+	function handleDummyUid() {
+		if ($this->piVars['showUid'] == $this->dummyCongressUid) {
+			$this->conf['includeHiddenRecords'] = 1;
+		}
+	}
+
+	/**
+	 * Sets the showUid to the dummy congress in order to save the registration
+	 * to this congress
+	 *
+	 * @return void
+	 */
+	function setDummyUid() {
+		if ($this->conf['registration.']['type'] == 'single') {
+			$this->piVars['showUid'] = $this->dummyCongressUid;
+		}
+	}
+
+
 	function singleView() {
 		global $TCA;
+
+		$this->handleDummyUid();
 
 		if (isset($this->piVars['showUid'])) {
 			if($this->conf['includeHiddenRecords']){
@@ -161,14 +197,12 @@ class tx_x4econgress_pi1 extends x4epibase {
 				$this->internal['currentRow'] = $this->pi_getRecord($this->tableName,intval($this->piVars['showUid']));
 			}
 		}
+
 		if (count($this->internal['currentRow'])>0) {
 
 			if($this->conf['xmlExport'] == 1){
 				$this->internal['currentRow']['name']?$filename = $this->internal['currentRow']['name']:$filename='xml_export';
 				$filename = str_ireplace(' ','_',$filename);
-
-
-
 				header('Content-Type: text/xml');
 				header('charset=utf-8');
 				header('Content-disposition: attachment; filename='.$filename.'.xml');
@@ -311,6 +345,13 @@ class tx_x4econgress_pi1 extends x4epibase {
 				break;
 			}
 		} else {
+
+			if ($this->getTSFFvar('modeSelection') == 'registrationLink') {
+				// use a fake uid to trigger the correct behavior
+				$this->piVars['showUid'] = $this->dummyCongressUid;
+				return $this->showRegistrationLink();
+			}
+			
 			if ($this->piVars['showUid']) {
 				if ($this->checkRegistrationDeadline()) {
 					switch($this->piVars['action']) {
@@ -362,6 +403,7 @@ class tx_x4econgress_pi1 extends x4epibase {
 	 * Display registration view
 	 */
 	function registrationView() {
+		$this->setDummyUid();
 		if($this->piVars['regFeUser']){
 			$this->piVars['type'] = 1;
 			// $this->piVars['action'] = 'complete_registration';
@@ -385,8 +427,6 @@ class tx_x4econgress_pi1 extends x4epibase {
 			return $this->cObj->substituteMarkerArray($out,$mArr);
 		}
 	}
-
-
 
 	function completeRegistration() {
 		$this->saveRegistration();
@@ -463,7 +503,7 @@ class tx_x4econgress_pi1 extends x4epibase {
 			foreach($recipients as $recipient){
 				$mailer->start();
 				$mailer->addPlain($message[$i]);
-				$mailer->from_email = 'noreply@biomedizin.unibas.ch';
+				$mailer->from_email = 'noreply@unibas.ch';
 				$mailer->from_name = 'Kongress-Anmeldung';
 				$mailer->subject = $subject[$i];
 				$mailer->replyto_email = $mailer->from_email;
@@ -654,6 +694,14 @@ class tx_x4econgress_pi1 extends x4epibase {
 		return $pass;
 	}
 
+	/**
+	 * Displays the registration link
+	 *
+	 * @return String
+	 */
+	function showRegistrationLink() {
+		return $this->getRegistrationLink('<a href="###registrationLink###">###registrationLinkLabel###</a>',$uid='');
+	}
 
 	/**
 	 * Display the payment information for participants

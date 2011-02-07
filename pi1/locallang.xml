@@ -6,7 +6,7 @@
 	</meta>
 	<data type="array">
 		<languageKey index="default" type="array">
-			<label index="pi1_title">4Eyes Congress Database</label>
+			<label index="pi1_title">4eyes Congress Database</label>
 			<label index="pi1_plus_wiz_description">Manage Congresses with Categories.</label>
 			<label index="listFieldHeader_name">Name</label>
 			<label index="listFieldHeader_date_from">Date</label>
@@ -14,6 +14,7 @@
 			<label index="max_participants">Maximum participants</label>
 			<label index="registrationLink">Register</label>
 			<label index="registrationComplete">Registration complete</label>
+			<label index="registrationText">Event registration</label>
 			<label index="speakerRegistration">Information for the poster</label>
 			<label index="registration_deadline">Registration deadline</label>
 			<label index="course_reg_deadline">Registration deadline</label>
@@ -24,11 +25,15 @@
 			<label index="form_type">Register as</label>
 			<label index="form_type_speaker">Speaker</label>
 			<label index="form_type_participant">Participant</label>
+			<label index="form_gender">Gender</label>
+			<label index="form_gender_male">Male</label>
+			<label index="form_gender_female">Female</label>
 			<label index="form_name">Last name</label>
 			<label index="form_firstname">First name</label>
 			<label index="form_address">Address</label>
 			<label index="form_zip">Zip</label>
 			<label index="form_city">City</label>
+			<label index="form_birthyear">Jahrgang</label>
 			<label index="form_country">Country</label>
 			<label index="form_submit">Send</label>
 			<label index="form_email">Email</label>
@@ -53,6 +58,7 @@
 			<label index="modeSelection.Hierarchy">Hierarchy</label>
 			<label index="modeSelection.Profile">Profile Page</label>
 			<label index="modeSelection.PayPal">PayPal IPN listener</label>
+			<label index="modeSelection.RegistrationLink">Registration link</label>
 			<label index="catSelection">Category is:</label>
 			<label index="catSelection.Category">Category</label>
 			<label index="catSelection.Person">Person</label>
@@ -93,7 +99,7 @@
 			<label index="files">Documents</label>
 		</languageKey>
 		<languageKey index="de" type="array">
-			<label index="pi1_title">4Eyes Kongress Datenbank</label>
+			<label index="pi1_title">4eyes Kongress Datenbank</label>
 			<label index="pi1_plus_wiz_description">Kategorische Verwaltung von Kongressen</label>
 			<label index="listFieldHeader_name">Name</label>
 			<label index="listFieldHeader_date_from">Datum</label>
@@ -102,6 +108,7 @@
 			<label index="registrationLink">Anmelden</label>
 			<label index="registrationComplete">Anmeldung abgeschlossen</label>
 			<label index="speakerRegistration">Poster Informationen</label>
+			<label index="registrationText">Anmeldung zur Veranstaltung</label>
 			<label index="posterTitle">Titel</label>
 			<label index="posterAbstract">Zusammenfassung</label>
 			<label index="posterDetail">Details</label>
@@ -109,11 +116,15 @@
 			<label index="form_type">Anmelden als</label>
 			<label index="form_type_speaker">Sprecher</label>
 			<label index="form_type_participant">Teilnehmer</label>
+			<label index="form_gender">Geschlecht</label>
+			<label index="form_gender_male">Mann</label>
+			<label index="form_gender_female">Frau</label>
 			<label index="form_name">Nachname</label>
 			<label index="form_firstname">Vorname</label>
 			<label index="form_address">Adresse</label>
 			<label index="form_zip">PLZ</label>
 			<label index="form_city">Ort</label>
+			<label index="form_birthyear">Jahrgang</label>
 			<label index="form_country">Land</label>
 			<label index="form_submit">Absenden</label>
 			<label index="form_email">E-Mail</label>
@@ -141,6 +152,7 @@
 			<label index="modeSelection.Hierarchy">Hierarchie</label>
 			<label index="modeSelection.Profile">Profilseite</label>
 			<label index="modeSelection.PayPal">PayPal IPN listener</label>
+			<label index="modeSelection.RegistrationLink">Anmeldelink</label>
 			<label index="catSelection">Kategorie ist:</label>
 			<label index="catSelection.Category">Kategorie</label>
 			<label index="catSelection.Person">Person</label>

@@ -22,6 +22,10 @@
 								<numIndex index="0">LLL:EXT:x4econgress/pi1/locallang.xml:modeSelection.ListByCategory</numIndex>
 								<numIndex index="1">category</numIndex>
 							</numIndex>
+							<numIndex index="2" type="array">
+								<numIndex index="0">LLL:EXT:x4econgress/pi1/locallang.xml:modeSelection.RegistrationLink</numIndex>
+								<numIndex index="1">registrationLink</numIndex>
+							</numIndex>
 							<numIndex index="3" type="array">
 								<numIndex index="0">LLL:EXT:x4econgress/pi1/locallang.xml:modeSelection.ListOfDetails</numIndex>
 								<numIndex index="1">listOfDetail</numIndex>
@@ -50,6 +54,7 @@
 								<numIndex index="0">LLL:EXT:x4econgress/pi1/locallang.xml:modeSelection.PayPal</numIndex>
 								<numIndex index="1">paypallistener</numIndex>
 							</numIndex>
+
 						</items>
 						<minitems>1</minitems>
 						<maxitems>1</maxitems>

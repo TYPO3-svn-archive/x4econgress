@@ -1,4 +1,12 @@
 (add new changes on top of this file)
+2011-02-06 Markus Stauffiger <markus-at-4eyes.ch>
+	* Added new fields to participants table
+	* A few lines of TS-documentation
+	* Added "all participants" option to the backend export module
+	* Added dummyCongress to use if there is only a general registration
+	* Added new modeSelection "registration link"
+	* Added session check to handle the display of the registration mode, if
+	  registration type is single
 
 2010-12-01 Manuel Kammermann <manuel-at-4eyes.ch>
 	* pi1->pi_list_row(): checked for empty string before performing in_array()

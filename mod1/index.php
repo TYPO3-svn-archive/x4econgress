@@ -188,11 +188,19 @@ class tx_x4econgress_module1 extends t3lib_SCbase {
 		global $LANG;
 		$csvDiv = $this->csvDiv;
 		$csv = '';
-		$where = 'uid="'.$cuid.'" AND deleted=0';
-		$congresses = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows('name',$this->tableCongresses,$where,'');
-		$congressname = $congresses[0]['name'];
+
+		if ($cuid != 'all') {
+			$where = 'uid="'.intval($cuid).'" AND deleted=0';
+			$congresses = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows('name',$this->tableCongresses,$where,'');
+			$congressname = $congresses[0]['name'];
+		} else {
+			$congressname =  $LANG->getLL('all');
+		}
 		
-		$where = 'congress_id="'.$cuid.'" AND deleted=0';
+		$where = 'deleted = 0 AND pid = '.intval($this->id);
+		if ($cuid != 'all') {
+			$where .= ' AND congress_id='.intval($cuid);
+		}
 		$participants = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows($this->showFields,$this->tableParticipants,$where,'name, firstname');
 		$csv .= $LANG->getLL("title"). ": " . $csvDiv . $congressname . "\n";
 		
@@ -273,6 +281,8 @@ class tx_x4econgress_module1 extends t3lib_SCbase {
 	$out .= '<label for="x4econgress_congresses">'.$LANG->getLL("choose").' </label> ';
 	$out .= '<select name="x4econgress_congresses" onchange="document.getElementById(\'congressSelect\').submit();">';
 	$out .= '<option value="-1"></option>';
+	if($_REQUEST['x4econgress_congresses'] == 'all') $selected = "selected";
+	$out .= '<option value="all" '.$selected.'>'.$LANG->getLL('all').'</option>';
 	
 	foreach($congresses as $congress){
 		$selected = '';
@@ -293,10 +303,6 @@ class tx_x4econgress_module1 extends t3lib_SCbase {
 			}
 		}
 		
-		
-			
-		
-		
 		$out .= '<p>&nbsp;</p><form id="exportCsv" method="post" action="" target="_blank">
 					<input type="hidden" name="cuid" value="'.$cuid.'" />
   					<input type="submit" name="export" id="export" value="'.$LANG->getLL("exportb").'" /></td></form>';
@@ -304,9 +310,13 @@ class tx_x4econgress_module1 extends t3lib_SCbase {
 		//$out .= '<b> : '.$person['firstname']." ".$person['lastname'].'</b>';
 	
 		$this->content.=$this->doc->spacer(5);
-            
-		$where = 'congress_id="'.$cuid.'" AND deleted=0';
-		$participants = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows('*','tx_x4econgress_participants',$where,'name, firstname');
+        
+		$where = 'deleted = 0 AND pid = '.intval($this->id);
+		if ($cuid != 'all') {
+			$where .= ' AND congress_id='.intval($cuid);
+		}
+		$participants = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows('*','tx_x4econgress_participants',$where,'','name, firstname');
+
 		$out .= '<p>&nbsp;</p><table style="width: 100%">';
 		$out .= '<tr style="font-size: 10px; text-align: left">';
 		
@@ -317,6 +327,7 @@ class tx_x4econgress_module1 extends t3lib_SCbase {
 				break;
 			default:
 				$out .= '<th>'.$LANG->getLL($field).'</th>';
+			break;
 			}
 		}
 		
