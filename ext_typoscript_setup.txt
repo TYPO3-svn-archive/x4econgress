@@ -47,6 +47,8 @@ plugin.tx_x4econgress_pi1 {
 		# single: One registration for all event records, dummy congress needs to be set as well
 		type = standard
 
+		
+
 		# use ReCaptcha in the registration form
 		useReCaptcha = 0
 
@@ -65,6 +67,13 @@ plugin.tx_x4econgress_pi1 {
 
 	registration_email {
 		template = EXT:x4econgress/templates/registration_email.html
+		
+	}
+
+	mailer {
+		from_mail = noreply@unibas.ch
+		from_name = Kongress-Anmeldung
+		subject = Kongress-Anmeldung
 	}
 
 	payment {
@@ -77,13 +86,21 @@ plugin.tx_x4econgress_pi1 {
 
 	# separate Template for User E-Mail upon registration
 	userRegMailTemplate = 
+
 	# force Registration Mail if notification email field is empty (for user mail)
 	forceRegistrationMail = 0
-	
+
+	# if registration-type = single you may use a dedicated registration page
+	registrationPageUid =
+
 	#paypal log
 	ppIpnLogFile = fileadmin/{$token}/paypal.txt
 	#paypal custom vars
 	storeCustomPPVars = payed,veggie,evening
+
+	persDb {
+		images < plugin.tx_x4epersdb_pi3.images
+	}
 }
 
 # Configuration for xml-output

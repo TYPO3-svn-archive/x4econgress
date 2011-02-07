@@ -14,6 +14,7 @@
 			<label index="max_participants">Maximum participants</label>
 			<label index="registrationLink">Register</label>
 			<label index="registrationComplete">Registration complete</label>
+			<label index="registrationEmailSubject">Congress registration</label>
 			<label index="registrationText">Event registration</label>
 			<label index="speakerRegistration">Information for the poster</label>
 			<label index="registration_deadline">Registration deadline</label>
@@ -59,6 +60,7 @@
 			<label index="modeSelection.Profile">Profile Page</label>
 			<label index="modeSelection.PayPal">PayPal IPN listener</label>
 			<label index="modeSelection.RegistrationLink">Registration link</label>
+			<label index="modeSelection.RegistrationForm">Registration form (only for single-type registration)</label>
 			<label index="catSelection">Category is:</label>
 			<label index="catSelection.Category">Category</label>
 			<label index="catSelection.Person">Person</label>
@@ -108,6 +110,7 @@
 			<label index="registrationLink">Anmelden</label>
 			<label index="registrationComplete">Anmeldung abgeschlossen</label>
 			<label index="speakerRegistration">Poster Informationen</label>
+			<label index="registrationEmailSubject">Kongress Anmeldung</label>
 			<label index="registrationText">Anmeldung zur Veranstaltung</label>
 			<label index="posterTitle">Titel</label>
 			<label index="posterAbstract">Zusammenfassung</label>
@@ -146,13 +149,14 @@
 			<label index="modeSelection.ListByCategory">Liste nach Kategorie</label>
 			<label index="modeSelection.ListByPerson">Liste nach Person</label>
 			<label index="modeSelection.Search">Suche</label>
-			<label index="modeSelection.FeEdit">FE Eerfassung</label>
+			<label index="modeSelection.FeEdit">FE Erfassung</label>
 			<label index="modeSelection.ListByPerson">Liste der Details</label>
 			<label index="modeSelection.CatMenu">Kategoriemenü</label>
 			<label index="modeSelection.Hierarchy">Hierarchie</label>
 			<label index="modeSelection.Profile">Profilseite</label>
 			<label index="modeSelection.PayPal">PayPal IPN listener</label>
 			<label index="modeSelection.RegistrationLink">Anmeldelink</label>
+			<label index="modeSelection.RegistrationForm">Anmeldeformular (Funktioniert nur bei Gesamtanmeldung)</label>
 			<label index="catSelection">Kategorie ist:</label>
 			<label index="catSelection.Category">Kategorie</label>
 			<label index="catSelection.Person">Person</label>

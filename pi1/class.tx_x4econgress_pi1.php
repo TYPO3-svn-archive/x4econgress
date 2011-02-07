@@ -45,7 +45,7 @@ class tx_x4econgress_pi1 extends x4epibase {
 	var $registrationUid; // uid of the registration, used for the speaker's poster-infos
 	var $uploaddir = 'uploads/tx_x4econgress/';
 	var $personDetailPlugin = 'tx_x4epersdb_pi7';
-	
+
 	/**
 	 * Uid to use, if there is no actual record to use
 	 * 
@@ -235,8 +235,8 @@ class tx_x4econgress_pi1 extends x4epibase {
 			$relDir = $TCA['tx_x4epersdb_person']['columns']['image']['config']['uploadfolder'];
 			$persUid = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows('uid_foreign','tx_x4econgress_congresses_persons_mm','uid_local = '.$this->internal['currentRow']['uid']);
 			if(count($persUid) > 0){
-				$persrec = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows('*','tx_x4epersdb_person','uid = '.$persUid[0]['uid_foreign']);
-				if($persrec[0]['image']){
+				$persrec = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows('*','tx_x4epersdb_person','uid = '.intval($persUid[0]['uid_foreign']));
+                if($persrec[0]['image']){
 					$mArr['###personpic###'] = '<img alt="Profile picture" src="'.$relDir.$persrec[0]['image'].'" />';
 				}
 			} else {
@@ -345,11 +345,22 @@ class tx_x4econgress_pi1 extends x4epibase {
 				break;
 			}
 		} else {
-
-			if ($this->getTSFFvar('modeSelection') == 'registrationLink') {
-				// use a fake uid to trigger the correct behavior
-				$this->piVars['showUid'] = $this->dummyCongressUid;
-				return $this->showRegistrationLink();
+			$mode = $this->getTSFFvar('modeSelection');
+			switch($mode) {
+				case 'registrationLink':
+					// use a fake uid to trigger the correct behavior
+					$this->piVars['showUid'] = $this->dummyCongressUid;
+					return $this->showRegistrationLink();
+				break;
+				case 'registrationForm':
+					if ($this->piVars['action'] == 'complete_registration') {
+						return $this->completeRegistration();
+					} else {
+						return $this->registrationView();
+					}
+				break;
+				default:
+				break;
 			}
 			
 			if ($this->piVars['showUid']) {
@@ -492,7 +503,7 @@ class tx_x4econgress_pi1 extends x4epibase {
 					$message[] = strip_tags(str_replace("<br />", "\n", $this->cObj->substituteMarkerArray($tMess[0],$m,'###|###')));
 				} else {
 					$message[] = $this->cObj->substituteMarkerArray($this->template,$m,'###|###');
-					$subject[] = 'Kongress Anmeldung';
+					$subject[] = $this->pi_getLL('registrationEmailSubject');
 				}
 			}
 
@@ -506,8 +517,8 @@ class tx_x4econgress_pi1 extends x4epibase {
 				$mailer->from_email = 'noreply@unibas.ch';
 				$mailer->from_name = 'Kongress-Anmeldung';
 				$mailer->subject = $subject[$i];
-				$mailer->replyto_email = $mailer->from_email;
-				$mailer->replyto_name = $mailer->from_name;
+				//$mailer->replyto_email = $mailer->from_email;
+				//$mailer->replyto_name = $mailer->from_name;
 				$mailer->organisation = 'Uni Basel';
 
 				// added by manuel - 5.5.2010 - overwrite with TS constants - begin
@@ -700,7 +711,7 @@ class tx_x4econgress_pi1 extends x4epibase {
 	 * @return String
 	 */
 	function showRegistrationLink() {
-		return $this->getRegistrationLink('<a href="###registrationLink###">###registrationLinkLabel###</a>',$uid='');
+		return $this->getRegistrationLink($this->cObj->fileResource($this->conf['registrationLink.']['template']),$uid='');
 	}
 
 	/**

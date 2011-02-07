@@ -1,4 +1,11 @@
 (add new changes on top of this file)
+
+2011-02-07 Markus Stauffiger <markus-at-4eyes.ch>
+	* New view "registrationForm" which can be accessed directly if registration
+	  mode is single
+	* Mode selection registrationLink now works with template
+	* Fixes for the registration in single mode
+
 2011-02-06 Markus Stauffiger <markus-at-4eyes.ch>
 	* Added new fields to participants table
 	* A few lines of TS-documentation

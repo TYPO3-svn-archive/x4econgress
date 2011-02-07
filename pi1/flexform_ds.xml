@@ -26,6 +26,10 @@
 								<numIndex index="0">LLL:EXT:x4econgress/pi1/locallang.xml:modeSelection.RegistrationLink</numIndex>
 								<numIndex index="1">registrationLink</numIndex>
 							</numIndex>
+							<numIndex index="10" type="array">
+								<numIndex index="0">LLL:EXT:x4econgress/pi1/locallang.xml:modeSelection.RegistrationForm</numIndex>
+								<numIndex index="1">registrationForm</numIndex>
+							</numIndex>
 							<numIndex index="3" type="array">
 								<numIndex index="0">LLL:EXT:x4econgress/pi1/locallang.xml:modeSelection.ListOfDetails</numIndex>
 								<numIndex index="1">listOfDetail</numIndex>
